@@ -208,6 +208,8 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter.ttk import *
+import random
+from random import shuffle
 
 class Aplicacion:
 
@@ -219,68 +221,83 @@ class Aplicacion:
         self.canvas=tk.Canvas(self.window, width=800, height=400, background="black")
         self.canvas.grid(column=0, row=4)
         self.coins = []
+        self.images = []
 
-        file_1=tk.PhotoImage(file="coins.png")
-        self.canvas.create_image(50, 100, image=file_1, anchor="nw")
-
-        file_2=tk.PhotoImage(file="cards.png")
-        self.canvas.create_image(300, 100, image=file_2, anchor="nw")
-
-        file_3=tk.PhotoImage(file="game-coins.png")
-        self.canvas.create_image(550, 100, image=file_3, anchor="nw")
+        self.file_1=tk.PhotoImage(file="coins.png")
+        self.file_2=tk.PhotoImage(file="cards.png")
+        self.file_3=tk.PhotoImage(file="game-coins.png")
+        self.file_4=tk.PhotoImage(file="cubes.png")
+        self.file_5=tk.PhotoImage(file="sevens.png")
 
         self.window.mainloop()
 
-    def emptyList(self):
-        self.coins.clear()
-        self.label_1.configure(text="Cambio con: "+ str(self.coins))
-
     def play(self):
-        value = 0
+        x = [[i] for i in range(6)]
+        shuffle(x)
+        for n in x:
+            self.images.append(n)
+            print(n)
+        print(self.images)
+        self.canvas.create_image(50, 100, image=self.file_1, anchor="nw")
+        self.canvas.create_image(300, 100, image=self.file_2, anchor="nw")
+        self.canvas.create_image(550, 100, image=self.file_4, anchor="nw")
+
+    def changeCredits(self):
+        print(self.coins)
 
     def verifyCoins(self):
         cant = 0
         value = 0
-        if self.select_1.get()==1:
-            cant+=1
+        if self.select_1.get() == 1:
             value = 1
-            self.coins.append(value)
-            # self.coins.insert(0, value)
-        elif self.select_1.get()==0:
+            if value in self.coins:
+                pass
+            else:
+                self.coins.append(value)
+        elif self.select_1.get() == 0:
             value = 1
-            self.coins.remove(value)
-        if self.select_2.get()==1:
-            cant+=1
+            if value in self.coins:
+                self.coins.remove(value)
+        if self.select_2.get() == 1:
             value = 2
-            self.coins.append(value)
-            # self.coins.insert(1, value)
-        elif self.select_2.get()==0:
+            if value in self.coins:
+                pass
+            else:
+                self.coins.append(value)
+        elif self.select_2.get() == 0:
             value = 2
-            self.coins.remove(value)
-        if self.select_3.get()==1:
-            cant+=1
+            if value in self.coins:
+                self.coins.remove(value)
+        if self.select_3.get() == 1:
             value = 5
-            self.coins.append(value)
-            # self.coins.insert(2, value)
-        elif self.select_3.get()==0:
+            if value in self.coins:
+                pass
+            else:
+                self.coins.append(value)
+        elif self.select_3.get() == 0:
             value = 5
-            self.coins.remove(value)
-        if self.select_4.get()==1:
-            cant+=1
+            if value in self.coins:
+                self.coins.remove(value)
+        if self.select_4.get() == 1:
             value = 10
-            self.coins.append(value)
-            # self.coins.insert(3, value)
-        elif self.select_4.get()==0:
+            if value in self.coins:
+                pass
+            else:
+                self.coins.append(value)
+        elif self.select_4.get() == 0:
             value = 10
-            self.coins.remove(value)
-        if self.select_5.get()==1:
-            cant+=1
+            if value in self.coins:
+                self.coins.remove(value)
+        if self.select_5.get() == 1:
             value = 20
-            self.coins.append(value)
-            # self.coins.insert(4, value)
-        elif self.select_5.get()==0:
+            if value in self.coins:
+                pass
+            else:
+                self.coins.append(value)
+        elif self.select_5.get() == 0:
             value = 20
-            self.coins.remove(value)
+            if value in self.coins:
+                self.coins.remove(value)
         print(self.coins)
         self.label_1.configure(text="Cambio con: "+ str(self.coins))
 
@@ -310,10 +327,10 @@ class Aplicacion:
         self.button_1.grid(column=30, row=25)
 
         self.button_2=tk.Button(self.labelframe1, text="Jugar", command=self.play)
-        self.button_2.grid(column=30, row=30)
+        self.button_2.grid(column=30, row=35)
 
-        self.button_3=tk.Button(self.labelframe1, text="Reiniciar", command=self.emptyList)
-        self.button_3.grid(column=30, row=35)
+        self.button_3=tk.Button(self.labelframe1, text="Cambiar Creditos", command=self.changeCredits)
+        self.button_3.grid(column=30, row=45)
 
         self.label_1=tk.Label(self.labelframe1, text="Monedas Seleccionadas:")
         self.label_1.grid(column=0, row=4)
