@@ -1,215 +1,16 @@
-# # # # # from tkinter import *
-# # # # # from tkinter.ttk import *
-
-# # # # # def clicked():
-# # # # #     title.configure(text="Coin Selected")
-# # # # #     print(one_state.get())
-# # # # #     title.grid(column=10, row=220)
-
-# # # # from tkinter import *
-# # # # from PIL import ImageTk,Image
-
-# # # # window = Tk()
-# # # # # canvas = Canvas(window, width = 300, height = 300)
-# # # # # canvas.pack()
-# # # # window.title("Coins Machine")
-
-# # # # # img = ImageTk.PhotoImage(Image.open("coins.png"))
-# # # # # canvas.create_image(20, 20, anchor=NW, image=img)
-
-# # # # title = Label(window, text="Coins", font=("Arial Bold", 25))
-# # # # title.grid(column=10, row=10)
-
-# # # # coins = [1, 2, 5, 10]
-
-# # # # # Disable Coins
-# # # # def switchOne():
-# # # #     if one["state"] == "normal":
-# # # #         one["state"] = "disabled"
-# # # #         disableOne["text"] = "enable"
-# # # #         coins.pop(0)
-# # # #     else:
-# # # #         one["state"] = "normal"
-# # # #         disableOne["text"] = "disable"
-# # # #         coins.append(coin)
-
-# # # # def switchTwo():
-# # # #     coin = 2
-# # # #     if two["state"] == "normal":
-# # # #         two["state"] = "disabled"
-# # # #         disableTwo["text"] = "enable"
-# # # #         coins.pop(1)
-# # # #     else:
-# # # #         two["state"] = "normal"
-# # # #         disableTwo["text"] = "disable"
-# # # #         coins.append(coin)
-
-# # # # def switchFive():
-# # # #     coin = 5
-# # # #     if five["state"] == "normal":
-# # # #         five["state"] = "disabled"
-# # # #         disableFive["text"] = "enable"
-# # # #         coins.pop(2)
-# # # #     else:
-# # # #         five["state"] = "normal"
-# # # #         disableFive["text"] = "disable"
-# # # #         coins.append(coin)
-
-# # # # def switchTen():
-# # # #     coin = 10
-# # # #     if ten["state"] == "normal":
-# # # #         ten["state"] = "disabled"
-# # # #         disableTen["text"] = "enable"
-# # # #         coins.pop(3)
-# # # #     else:
-# # # #         ten["state"] = "normal"
-# # # #         disableTen["text"] = "disable"
-# # # #         coins.append(coin)
-
-# # # # def withdraw():
-# # # #     print(coins)
-
-# # # # #--Buttons
-# # # # one = Button(window, text="$1", command=switchOne)
-# # # # one.grid(column=10, row=15)
-
-# # # # disableOne = Button(text="disable", command=switchOne)
-# # # # disableOne.grid(row=15, column=11)
-
-# # # # two = Button(window, text="$2", command=switchTwo)
-# # # # two.grid(column=10, row=25)
-
-# # # # disableTwo = Button(text="disable", command=switchTwo)
-# # # # disableTwo.grid(row=25, column=11)
-
-# # # # five = Button(window, text="$5", command=switchFive)
-# # # # five.grid(column=10, row=35)
-
-# # # # disableFive = Button(text="disable", command=switchFive)
-# # # # disableFive.grid(row=35, column=11)
-
-# # # # ten = Button(window, text="$10", command=switchTen)
-# # # # ten.grid(column=10, row=45)
-
-# # # # disableTen = Button(text="disable", command=switchTen)
-# # # # disableTen.grid(row=45, column=11)
-
-# # # # withdrawButton = Button(window, text="Cobrar", command=withdraw)
-# # # # withdrawButton.grid(column=35, row=25)
-
-# # # # # window.geometry("300x300")
-# # # # window.mainloop()
-
-
-# # # # from tkinter import *
-# # # # from PIL import ImageTk,Image
-# # # # root = Tk()
-# # # # root.title("Coins Machine")
-# # # # canvas = Canvas(root, width = 1200, height = 600)
-# # # # canvas.pack()
-# # # # img = ImageTk.PhotoImage(Image.open("coins.png"))
-# # # # canvas.create_image(5, 5, anchor=NW, image=img)
-
-
-# # # # root.mainloop()
-
-# # import tkinter as tk
-# # from tkinter import scrolledtext as st
-# # import sys
-# # import os
-# # from os import listdir
-# # from tkinter import filedialog as fd
-# # from tkinter import messagebox as mb
-# # from tkinter import font
-# # from tkinter import *
-# # from tkinter import ttk
-# # import tkinter
-
-# # class Aplicacion:
-
-# #     def __init__(self):
-
-# #         self.window=tk.Tk()
-# #         self.window.title("Coins Machine")
-# #         self.appHighlightFont = font.Font(family='Helvetica', size=16, weight='normal')
-# #         label_2 = Label(self.window, text="Coins Machine", font=self.appHighlightFont).place(x=480,y=5)
-# #         self.canvas=tk.Canvas(self.window, width=900, height=300, background="white")
-# #         self.canvas.grid(column=0, row=0)
-
-# #         file_1=tk.PhotoImage(file="coins.png")
-# #         self.canvas.create_image(50, 100, image=file_1, anchor="nw")
-
-# #         file_2=tk.PhotoImage(file="coins.png")
-# #         self.canvas.create_image(300, 100, image=file_2, anchor="nw")
-
-# #         file_3=tk.PhotoImage(file="coins.png")
-# #         self.canvas.create_image(550, 100, image=file_3, anchor="nw")
-
-# #         self.select_1=tk.IntVar()
-# #         self.check_1=tk.Checkbutton(self.window,text="$1", variable=self.select_1)
-# #         self.check_1.grid(column=30, row=10)
-# #         self.select_2=tk.IntVar()
-# #         self.check_2=tk.Checkbutton(self.window,text="$2", variable=self.select_2)
-# #         self.check_2.grid(column=30, row=15)
-# #         self.select_3=tk.IntVar()
-# #         self.check_3=tk.Checkbutton(self.window,text="$5", variable=self.select_3)
-# #         self.check_3.grid(column=30, row=20)
-
-# #         self.button_1=tk.Button(self.window, text="Jugar", command=self.verifyCoins)
-# #         self.button_1.grid(column=30, row=25)
-
-# #         self.label_1=tk.Label(text="Monedas Seleccionadas:")
-# #         self.label_1.grid(column=30, row=30)
-
-# #         self.window.mainloop()
-
-# #     def verifyCoins(self):
-# #         cant=0
-# #         if self.select_1.get()==1:
-# #             cant+=1
-# #         if self.select_2.get()==1:
-# #             cant+=1
-# #         if self.select_3.get()==1:
-# #             cant+=1
-# #         self.label_1.configure(text="cantidad:"+str(cant))
-
-# # application=Aplicacion()
-
-
-# import tkinter as tk
-
-# class Aplicacion:
-#     def __init__(self):
-#         self.ventana1=tk.Tk()
-#         self.canvas1=tk.Canvas(self.ventana1, width=900, height=500, background="black")
-#         self.canvas1.grid(column=0, row=0)
-#         archi1=tk.PhotoImage(file="coins.png")
-#         self.canvas1.create_image(30, 100, image=archi1, anchor="nw", tags="movil")
-#         archi2=tk.PhotoImage(file="cards.png")
-#         self.canvas1.create_image(400, 100, image=archi2, anchor="nw", tags="movil")
-#         self.canvas1.tag_bind("movil", "<ButtonPress-1>", self.presion_boton)
-#         self.canvas1.tag_bind("movil", "<Button1-Motion>", self.mover)
-#         self.carta_seleccionada = None
-#         self.ventana1.mainloop()
-
-#     def presion_boton(self, evento):
-#         carta = self.canvas1.find_withtag(tk.CURRENT)
-#         self.carta_seleccionada = (carta, evento.x, evento.y)
-
-#     def mover(self, evento):
-#         x, y = evento.x, evento.y
-#         carta, x1, y1 = self.carta_seleccionada
-#         self.canvas1.move(carta, x - x1, y - y1)
-#         self.carta_seleccionada = (carta, x, y)
-
-# aplicacion1=Aplicacion()
-
+"""
+Casino - Algoritmo Voraz
+Seminario de Solución de Problemas de Algoritmia
+Created By: Isaac Eduardo Sánchez Campos
+Código: 211172172
+"""
 
 import tkinter as tk
 from tkinter import ttk
 from tkinter.ttk import *
 import random
 from random import shuffle
+from tkinter import messagebox as mb
 
 class Aplicacion:
 
@@ -222,6 +23,8 @@ class Aplicacion:
         self.canvas.grid(column=0, row=4)
         self.coins = []
         self.images = []
+        self.credits = 0
+        self.counters = []
 
         self.file_1=tk.PhotoImage(file="coins.png")
         self.file_2=tk.PhotoImage(file="cards.png")
@@ -243,7 +46,31 @@ class Aplicacion:
         self.canvas.create_image(550, 100, image=self.file_4, anchor="nw")
 
     def changeCredits(self):
-        print(self.coins)
+        print(len(self.coins))
+        self.counters = [None] * len(self.coins)
+        print(self.counters, len(self.counters))
+        for i in range(len(self.coins)):
+            self.counters[i-1] = 0
+        counter = 0
+        while self.credits != 0:
+            print(self.coins)
+            if self.coins[counter] <= self.credits:
+                self.credits = self.credits - self.coins[counter]
+                self.counters[counter] = self.counters[counter] + 1;
+            else:
+                counter += 1
+        for i in range(len(self.coins)):
+            print(self.coins[i], self.counters[i])
+        self.credits_label.configure(text="Creditos: "+ str(self.credits))
+        self.credits_change_label.configure(text="Su cambio con : "+ str(self.coins))
+        self.counters_change_label.configure(text=str(self.counters) + " monedas respectivamente.")
+
+    def addCredits(self):
+        credits = self.credits_input.get()
+        self.credits += int(credits)
+        self.credits_label.configure(text="Creditos: "+ str(self.credits))
+        print(self.credits)
+        mb.showinfo("Alerta","Creditos añadidos correctamente. ✅")
 
     def verifyCoins(self):
         cant = 0
@@ -298,6 +125,7 @@ class Aplicacion:
             value = 20
             if value in self.coins:
                 self.coins.remove(value)
+        self.coins.sort(reverse=True)
         print(self.coins)
         self.label_1.configure(text="Cambio con: "+ str(self.coins))
 
@@ -334,6 +162,20 @@ class Aplicacion:
 
         self.label_1=tk.Label(self.labelframe1, text="Monedas Seleccionadas:")
         self.label_1.grid(column=0, row=4)
+
+        self.credits_label=tk.Label(self.labelframe1,text="Creditos:")
+        self.credits_label.grid(column=0, row=10)
+        self.credits=tk.IntVar()
+        self.credits_input=tk.Entry(self.labelframe1, width=25, textvariable=self.credits)
+        self.credits_input.grid(column=0, row=12)
+        self.add_credits_button=tk.Button(self.labelframe1, text="Añadir", command=self.addCredits)
+        self.add_credits_button.grid(column=0, row=14)
+
+        self.credits_change_label=tk.Label(self.labelframe1,text="Su cambio con: ")
+        self.credits_change_label.grid(column=0, row=16)
+
+        self.counters_change_label=tk.Label(self.labelframe1, text=" monedas respectivamente.")
+        self.counters_change_label.grid(column=0, row=18)
 
         self.label_same=tk.Label(self.labelframe1, text="2 Iguales: 5")
         self.label_same.grid(column=35, row=1, padx=5)
